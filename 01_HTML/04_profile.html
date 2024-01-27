@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="profileContainer">
+        <h2>User Profile</h2>
+        <p id="profileInfo"></p>
+        <button onclick="goBack()">Go Back</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if user is logged in
+            const isLoggedIn = getCookie('isLoggedIn');
+
+            if (isLoggedIn === 'true') {
+                displayUserProfile();
+            } else {
+                // Redirect to login page if not logged in
+                window.location.href = './06_Login.html';
+            }
+        });
+
+        function displayUserProfile() {
+            const firstName = getCookie('firstName');
+            const lastName = getCookie('lastName');
+            const email = getCookie('email');
+            const role = getCookie('role');
+
+            const profileInfoElement = document.getElementById('profileInfo');
+            profileInfoElement.innerHTML = `Name: ${firstName} ${lastName}<br>Email: ${email}<br>Role: ${role}`;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+    </script>
+</body>
+
+</html>

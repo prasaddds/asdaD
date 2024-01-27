@@ -1,0 +1,318 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bugs</title>
+    <link rel="stylesheet" href="../02_CSS/01_styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .closeButton {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gridd">
+        <div class="griditems"> <img src="../07_bugreport.png" alt="Home Icon"
+            class="icons class2"> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./01_Homepage.html"> <img src="../02_Homeicon.png" alt="Home Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./02_Bugs.html"> <img src="../01_bugs.png" alt="Bugs Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./03_Search.html"> <img src="../06_serach.png" alt="Search Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./04_profile.html"> <img src="../05_profile.png" alt="Profile Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./05_Logout.html"> <img src="../04_logout.jpg" alt="Logout Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./06_Login.html"> <img src="../03_login.png" alt="Login Icon"
+                        class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./08_CreateAccount.html"> <img src="../08_createaccount.png" alt="Logout Icon"
+                            class="icons class2"> </a> </div>
+    </div>
+
+
+    <h1 class="class4">Amrita Univerity bug reporting portal</h1>
+    <h1>My Bugs</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Issue Date</th>
+                <th>Progress</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="bugTableBody"></tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Array of bug information
+            const bugInfo = [
+                { title: 'A bug in AUMS', description: 'Not able to see exam scores', issueDate: new Date().toLocaleDateString(), progress: 'Open' },
+                { title: 'Login Issue', description: 'Unable to login to the system', issueDate: new Date().toLocaleDateString(), progress: 'Open' },
+                // Add more bug information as needed
+            ];
+
+            // Display the bug information in a table
+            displayBugs(bugInfo);
+        });
+
+        function displayBugs(bugs) {
+            const bugTableBody = document.getElementById('bugTableBody');
+
+            bugs.forEach((bug, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${bug.title}</td>
+                    <td>${bug.description}</td>
+                    <td>${bug.issueDate}</td>
+                    <td id="progress-${index}">${bug.progress}</td>
+                    <td>
+                        ${bug.progress === 'Open' ?
+                            `<button class="closeButton" onclick="closeBug(${index})">Close Bug</button>` : ''}
+                    </td>
+                `;
+
+                bugTableBody.appendChild(row);
+            });
+        }
+
+        function closeBug(index) {
+            // Update the bug status to "Closed"
+            const bugProgress = document.getElementById(`progress-${index}`);
+            bugProgress.textContent = 'Closed';
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../02_CSS/01_styles.css">
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        .class4{
+            text-align: center;
+            color: #333;
+        }
+
+    
+        /*for footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .footer-section {
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            margin: 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .closeButton {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="gridd">
+        <div class="griditems"> <img src="../07_bugreport.png" alt="Home Icon"
+            class="icons class2"> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./01_Homepage.html"> <img src="../02_Homeicon.png" alt="Home Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./02_Bugs.html"> <img src="../01_bugs.png" alt="Bugs Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./03_Search.html"> <img src="../06_serach.png" alt="Search Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./04_profile.html"> <img src="../05_profile.png" alt="Profile Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./05_Logout.html"> <img src="../04_logout.jpg" alt="Logout Icon"
+                    class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./06_Login.html"> <img src="../03_login.png" alt="Login Icon"
+                        class="icons class2"> </a> </div>
+        <div class="griditems"> <a style="text-decoration: none; color:red" href="./08_CreateAccount.html"> <img src="../08_createaccount.png" alt="Logout Icon"
+                            class="icons class2"> </a> </div>
+    </div>
+
+    <h1 class="class4">Amrita Univerity bug reporting portal</h1>
+    <br><br><br><br><br>
+
+<div class="table1">
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Issue Date</th>
+                <th>Progress</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="bugTableBody"></tbody>
+    </table>
+</div>
+    <br><br><br><br><br>
+    <!--Footer-->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Contact us at: <a style="text-decoration: none; color:red" href="mailto:info@example.com">info@example.com</a> | Phone: +123456789</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <p>Follow us on: <a style="text-decoration: none; color:red" href="https://www.facebook.com/yourcompany">Facebook</a> | <a
+                       style="text-decoration: none; color: red;" href="https://twitter.com/yourcompany">Twitter</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <p><a style="text-decoration: none; color:red" href="/">Home</a> | <a style="text-decoration: none; color:red" href="/about">About Us</a> | <a style="text-decoration: none; color:red" href="/products">Products</a> | <a
+                       style="text-decoration: none; color: red;" href="/contact">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Sub to our newsletter for the latest updates: <input type="email" placeholder="Your email"><button>Subscribe</button></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Company Name. All rights reserved. | <a style="text-decoration: none; color:red" href="/privacy">Privacy Policy</a> | <a
+                    style="text-decoration: none; color: red;" href="/terms">Terms of Service</a></p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Array of bug information
+            const bugInfo = [
+                { title: 'A bug in AUMS', description: 'Not able to see exam scores', issueDate: new Date().toLocaleDateString(), progress: 'Open' },
+                { title: 'Login Issue', description: 'Unable to login to the system', issueDate: new Date().toLocaleDateString(), progress: 'Open' },
+                // Add more bug information as needed
+            ];
+
+            // Display the bug information in a table
+            displayBugs(bugInfo);
+        });
+
+        function displayBugs(bugs) {
+            const bugTableBody = document.getElementById('bugTableBody');
+
+            bugs.forEach((bug, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${bug.title}</td>
+                    <td>${bug.description}</td>
+                    <td>${bug.issueDate}</td>
+                    <td id="progress-${index}">${bug.progress}</td>
+                    <td>
+                        ${bug.progress === 'Open' ?
+                            `<button class="closeButton" onclick="closeBug(${index})">Close Bug</button>` : ''}
+                    </td>
+                `;
+
+                bugTableBody.appendChild(row);
+            });
+        }
+
+        function closeBug(index) {
+            // Update the bug status to "Closed"
+            const bugProgress = document.getElementById(`progress-${index}`);
+            bugProgress.textContent = 'Closed';
+        }
+    </script>
+</body>
+
+</html>
