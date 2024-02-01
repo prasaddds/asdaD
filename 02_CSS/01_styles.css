@@ -13,7 +13,10 @@ body {
     overflow-x: auto; /* Enable horizontal scrollbar */
     white-space: nowrap; /* Prevent content from wrapping to the next line */
     padding-bottom: 0px;
+    height: 10%;
+    
 }
+/**/
 
 .griditems {
     text-align: center;
